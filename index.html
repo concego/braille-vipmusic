@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Braille VIPMusic</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Dependências CDN -->
+  <script src="https://unpkg.com/vexflow@4.2.3/build/cjs/vexflow.js"></script>
+  <script src="https://unpkg.com/music21j@0.9.4/dist/music21.debug.js"></script>
+  <script src="https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://unpkg.com/tone@14.7.77/build/Tone.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/braille.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Braille VIPMusic</h1>
+    <nav aria-label="Menu principal">
+      <button id="tutorialBtn" aria-label="Iniciar tutorial">Tutorial</button>
+      <button id="practiceBtn" aria-label="Prática interativa">Prática</button>
+      <button id="editorBtn" aria-label="Editor de partituras">Editor</button>
+      <button id="theoryBtn" aria-label="Composição e teoria">Composição/Teoria</button>
+      <button id="referenceBtn" aria-label="Referência">Referência</button>
+      <button id="connectBraille" aria-label="Conectar linha Braille">Conectar Linha Braille</button>
+    </nav>
+  </header>
+  <main>
+    <section id="tutorial" class="hidden" aria-live="polite">
+      <h2>Tutorial</h2>
+      <p>Siga as etapas para aprender a usar o Braille VIPMusic.</p>
+    </section>
+    <section id="practice" class="hidden" aria-live="polite">
+      <h2>Prática Interativa</h2>
+      <p>Identifique o símbolo Braille exibido.</p>
+      <div id="brailleOutput"></div>
+      <button id="startPractice">Iniciar Prática</button>
+    </section>
+    <section id="editor" class="hidden" aria-live="polite">
+      <h2>Editor de Partituras</h2>
+      <textarea id="scoreInput" aria-label="Entrada de partitura"></textarea>
+      <button id="renderScore">Renderizar</button>
+      <div id="vexflowOutput"></div>
+      <button id="exportPDF">Exportar PDF</button>
+      <button id="exportMusicXML">Exportar MusicXML</button>
+      <button id="exportBRF">Exportar BRF</button>
+      <button id="exportAudio">Exportar Áudio</button>
+    </section>
+    <section id="theory" class="hidden" aria-live="polite">
+      <h2>Composição e Teoria</h2>
+      <p>Aprenda intervalos, escalas e harmonia.</p>
+    </section>
+    <section id="reference" class="hidden" aria-live="polite">
+      <h2>Referência</h2>
+      <p>Consulte a tabela MusiBraille.</p>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
